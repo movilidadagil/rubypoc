@@ -6,7 +6,7 @@ When('I open related page to register One Month package') do
   @page.subscribe_button.click
   expect(@page.monthly_pass.text).to eq('MONTHLY PASS')
   expect(@page.monthly_pass_subtitle.text).to eq('1 week FREE trial for new customers')
-  find('a', text: ' START FREE TRIAL ').click
+  @page.start_free_trail_button.click
 end
   
 Then('I should be on the create account page') do
