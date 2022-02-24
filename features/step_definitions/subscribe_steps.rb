@@ -4,7 +4,9 @@ require_relative '../../features/pages/subscribe'
 When('I open related page to register One Month package') do
   @page = Subscribe.new
   @page.subscribe_button.click
-  expect(@page.monthly_pass.text.index(2)).to equal('MONTHLY PASS')
+  expect(@page.monthly_pass.text).to eq('MONTHLY PASS')
+  expect(@page.monthly_pass_subtitle.text).to eq('1 week FREE trial for new customers')
+
   @page.start_free_trail_button.click
 end
   
@@ -21,14 +23,14 @@ end
   
 When('I finish create account') do
   @page.create_account_button.click
-  expect(@page.email_verification_info.text).to equal('INFO')
+  expect(@page.email_verification_info.text).to eq('INFO')
   @page.email_verification_info_close.click
 end
   
 Then('I should be on the payment method page') do
-  expect(@page.payment_method_header.text).to equal('INFO')
-  expect(@page.monthly_pass_card_header.text).to equal('MONTHLY PASS')
-  expect(@page.monthly_pass_card_subtitle_header.text).to.equal('1 week FREE trial for new customers')
+  expect(@page.payment_method_header.text).to eq('INFO')
+  expect(@page.monthly_pass_card_header.text).to eq('MONTHLY PASS')
+  expect(@page.monthly_pass_card_subtitle_header.text).to.eq('1 week FREE trial for new customers')
   expect(@page.payment_method_card_type_container.text).to be_displayed
  
 end

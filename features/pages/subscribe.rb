@@ -3,8 +3,9 @@ require_relative 'base'
 
 class Subscribe < Base
   element :subscribe_button, '[name="Subscribe"]'
-  element :monthly_pass, '.ap-sgbp-title'
-  element :start_free_trail_button, 'button[data-text="START FREE TRIAL]'
+  element :monthly_pass, "h3", text: "MONTHLY PASS"
+  element :monthly_pass_subtitle, "h4", text: "1 week FREE trial for new customers"
+  element :start_free_trail_button, '.ap-sgbp-btn'
   element :create_account_header, '.text-center'
   element :FirstName_name, 'FirstName'
   element :LastName_name, 'LastName'
@@ -26,9 +27,6 @@ class Subscribe < Base
   element :card_verification_code, '#Ecom_Payment_Card_Verification'
   element :yes_i_confirm_my_payment_button, '#submit3'
   element :transaction_error_header, '/div[contains(@class, "ncoltxtc")]/h3'
-
-
-
 
 
 end
