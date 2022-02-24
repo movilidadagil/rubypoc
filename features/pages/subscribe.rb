@@ -7,10 +7,10 @@ class Subscribe < Base
   element :monthly_pass_subtitle, "h4", text: "1 week FREE trial for new customers"
   element :start_free_trail_button, "a", text:"START FREE TRIAL"
   element :create_account_header, "h1", text: "CREATE ACCOUNT"
-  element :FirstName_name, 'FirstName'
-  element :LastName_name, 'LastName'
-  element :EmailOrPhone_name, 'EmailOrPhone'
-  element :Password_name, 'Password'
+  element :FirstName_name, '[name="FirstName"]'
+  element :LastName_name, '[name="LastName"]'
+  element :EmailOrPhone_name, '[name="EmailOrPhone"]'
+  element :Password_name, '[name="Password"]'
   element :create_account_button, 'input[data-text="CREATE ACCOUNT]'
   element :email_verification_info, '.title'
   element :email_verification_info_close, '#close'

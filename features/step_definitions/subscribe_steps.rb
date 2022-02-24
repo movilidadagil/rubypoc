@@ -10,7 +10,7 @@ When('I open related page to register One Month package') do
 end
   
 Then('I should be on the create account page') do
-  @page.wait_until_create_account_header_visible
+  @page.wait_until_FirstName_name_visible
   expect(@page.create_account_header.text).to eq('CREATE ACCOUNT')
 end
   
