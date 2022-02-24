@@ -23,8 +23,13 @@ end
   
 When('I finish create account') do
   @page.create_account_button.click
-  expect(@page.email_verification_info.text).to eq('INFO')
-  @page.email_verification_info_close.click
+
+    @page.wait_until_email_verification_info_visible(100)
+    expect(@page.email_verification_info.text).to eq('INFO')
+    @page.email_verification_info_close.click  
+  
+  
+  
 end
   
 Then('I should be on the payment method page') do
