@@ -5,7 +5,7 @@ class Subscribe < Base
   element :subscribe_button, '[name="Subscribe"]'
   element :monthly_pass, "h3", text: "MONTHLY PASS"
   element :monthly_pass_subtitle, "h4", text: "1 week FREE trial for new customers"
-  element :start_free_trail_button, '.ap-sgbp-btn'
+  element :start_free_trail_button, 'button[data-text="START FREE TRIAL]'
   element :create_account_header, '.text-center'
   element :FirstName_name, 'FirstName'
   element :LastName_name, 'LastName'
