@@ -24,7 +24,7 @@ end
 When('I finish create account') do
   @page.create_account_button.click
 
-    @page.wait_until_email_verification_info_visible(100)
+    @page.wait_until_email_verification_info_visible
     expect(@page.email_verification_info.text).to eq('INFO')
     @page.email_verification_info_close.click  
   
