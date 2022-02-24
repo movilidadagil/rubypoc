@@ -10,16 +10,15 @@ When('I open related page to register One Month package') do
 end
   
 Then('I should be on the create account page') do
-  Capybara.using_wait_time(10) do 
-  expect(@page.create_account_header).to be_displayed
-  end
+  @page.wait_until_create_account_header_visible
+  expect(@page.create_account_header.text).to eq('CREATE ACCOUNT')
 end
   
 Then('I fullfill account fields correctly') do
  @page.FirstName_name.set 'Hasan'
  @page.LastName_name.set 'Gul'
  @page.EmailOrPhone_name.set '05410001010'
- @page.Password_name.set
+ @page.Password_name.set '1Qaz2wsx'
 end
   
 When('I finish create account') do
