@@ -14,7 +14,7 @@ class Subscribe < Base
   element :create_account_button, '[type="submit"]'
   element :email_verification_info, '#form-messagepopup > div > div > div > div > div.form-header > h2'
   element :email_verification_info_close, '#close'
-  element :payment_method_header, '.ap-s-selectPackage'
+  element :payment_method_header, "h1", text: "PAYMENT METHOD"
   element :monthly_pass_card_header, '.ap-fb-title'
   element :monthly_pass_card_subtitle_header, '.ap-fb-subtitle'
   element :proceeding_check_terms_cb, '#checkTerms'

@@ -24,16 +24,17 @@ end
 When('I finish create account') do
   @page.create_account_button.click
 
-    @page.wait_until_email_verification_info_visible
-    expect(@page.email_verification_info.text).to eq('INFO')
-    @page.email_verification_info_close.click  
+   # @page.wait_until_email_verification_info_visible
+   # expect(@page.email_verification_info.text).to eq('INFO')
+   # @page.email_verification_info_close.click  
   
   
   
 end
   
 Then('I should be on the payment method page') do
-  expect(@page.payment_method_header.text).to eq('INFO')
+  @page.wait_until_payment_method_header_visible
+  expect(@page.payment_method_header.text).to eq('PAYMENT METHOD')
   expect(@page.monthly_pass_card_header.text).to eq('MONTHLY PASS')
   expect(@page.monthly_pass_card_subtitle_header.text).to.eq('1 week FREE trial for new customers')
   expect(@page.payment_method_card_type_container.text).to be_displayed
